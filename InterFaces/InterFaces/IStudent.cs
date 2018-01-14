@@ -18,9 +18,9 @@ namespace InterFaces
         string Name { get; set; }
   	string FullName { get; set; }
   int[] Grades { get; set; }
-  	String GetName();
-  	String GetFullName();
-  	Double GetAvgGrade();
+        string GetName();
+        string GetFullName();
+        double GetAvgGrade(int grad);
 
     }
 }

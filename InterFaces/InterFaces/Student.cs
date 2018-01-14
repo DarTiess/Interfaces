@@ -3,57 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterFaces;
 
 namespace InterFaces
-{ }
-//    class Student:IStudent
-//    {
-//        public string name { get; set; }
-//        public string fullname { get; set; }
-//        public int[] Grades { get; set; }
+{
+   public class Student : IStudent
+    {
+        public string Name { get; set; }
+        public string FullName { get; set; }
+        public int[] Grades { get; set; }
 
-//        public string Name
-//        {
-//            get
-//            {
-//                throw new NotImplementedException();
-//            }
+       public Student(string Name, string FullName, int[] Grades)
+        {
+            this.Name = Name;
+            this.FullName = FullName;
+           
+            
+           
+        }
+       public string GetName()
+        {
+            return Name;
+        }
+       public string GetFullName()
+        {
+            return FullName;
 
-//            set
-//            {
-//                throw new NotImplementedException();
-//            }
-//        }
-
-//        public string FullName
-//        {
-//            get
-//            {
-//                throw new NotImplementedException();
-//            }
-
-//            set
-//            {
-//                throw new NotImplementedException();
-//            }
-//        }
-
-//        string GetName()
-//        {
-//            return name;
-//        }
-//       string GetFullName() {
-//            return fullname;
-
-//        }
-//     double  GetAvgGrade() {
-//            for(int i = 0; i < 10; i++)
-//            {
-
-//            }
-//            return
-//        }
-
+        }
+      public double GetAvgGrade(int grad)
+        {
+            double avg;
+            
+            avg =grad / 10.0;
+            return avg;
+           }
       
-//    }
-//}
+
+    
+    }
+
+}

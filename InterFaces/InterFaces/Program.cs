@@ -130,7 +130,7 @@ namespace HouseBilding
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\t\tYour House is DONE");
                 Console.ForegroundColor = ConsoleColor.White;
-                
+                Console.WriteLine();
             }
             
             if ((bas.part >= 1))
@@ -359,6 +359,50 @@ namespace HouseBilding
   ●	Double GetAvgGrade() 
   Наследовать от интерфейса класс Student и реализовать его.
   */
+            Console.WriteLine();
+            Console.WriteLine();
+
+            int[][] Grades = new int[3][];
+            Grades[0] = new int[]{ 2, 3, 3, 2, 4, 5, 2, 3, 4, 5 };
+            Grades[1] = new int[] { 4, 5, 5, 4, 3, 4, 5, 4, 4, 3 };
+            Grades[2] = new int[] { 3, 4, 3, 4, 5, 4, 3, 2, 3, 4 };
+            Console.ForegroundColor = ConsoleColor.Blue;
+           Console.WriteLine(" \t\t\tСписок Студентов и их средний бал");
+            Console.ForegroundColor = ConsoleColor.White;
+            Student[] st = new Student[3];
+            st[0]=new Student("Petr","Ivanov",Grades[0]);
+         
+            st[1] = new Student("Anna", "Marie", Grades[1]);
+            
+            st[2] = new Student("Daniil", "Kim", Grades [2]);
+
+            int[] grad = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    grad[i] += Grades[i][j];
+                }
+            }
+
+            string name = "";
+            string fln = "";
+            double avg = 0.0;
+
+            for(int i = 0; i < st.Length; i++)
+            {
+               
+                name =st[i].GetName();
+                fln=st[i].GetFullName();
+
+                avg=st[i].GetAvgGrade(grad[i]);
+                Console.WriteLine(name + " " + fln + " средний бал = " + avg);
+            }
+
+            Console.WriteLine();
+            
+          
+           
         }
     }
 }
